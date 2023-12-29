@@ -34,7 +34,6 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -49,7 +48,7 @@ const login = async (req, res) => {
         expiresIn: "1h",
       });
 
-      res.json({ message: "Login successfully", token });
+      res.json({ message: "Login successfully", token, user });
     } else {
       res.status(401).json({ message: "Invalid email or password" });
     }
