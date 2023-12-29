@@ -7,7 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 const movieRoutes = require("./routes/movieRoutes");
 const app = express();
 const jsonParser = bodyParser.json();
-mongoose.connect(`${process.env.MONGODB_URI}/${process.env.MONGO_DB}`);
+mongoose.connect(`${process.env.MONGODB_URI}`);
 
 app.use(cors());
 
